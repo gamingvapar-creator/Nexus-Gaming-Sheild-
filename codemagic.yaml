@@ -6,10 +6,11 @@ workflows:
     environment:
       java: 21
     scripts:
-      - name: Setup Gradle Wrapper
+      - name: Setup Gradle Wrapper and Keystore
         script: |
           gradle wrapper --gradle-version 9.3.1
           chmod +x ./gradlew
+          base64 -d debug.keystore.base64 > debug.keystore || base64 -D debug.keystore.base64 > debug.keystore || base64 --decode debug.keystore.base64 > debug.keystore
       - name: Build Android APK
         script: ./gradlew assembleDebug
     artifacts:
