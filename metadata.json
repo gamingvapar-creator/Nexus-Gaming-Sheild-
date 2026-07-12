@@ -1,0 +1,6 @@
+{
+  "name": "Nexus Gaming Shield",
+  "description": "Gaming assistant to control network and block calls during gameplay.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
